@@ -13,6 +13,13 @@
       <p class="alert alert-info myLargeText text-center">
         10年後<br>{{ calc() | number }}円
       </p>
+
+      <table class="table table-bordered table-striped">
+        <tr *ngFor="let value of calcArray(); let i = index">
+          <td>{{ i }}年目</td>
+          <td>{{ value | number }}円</td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>
