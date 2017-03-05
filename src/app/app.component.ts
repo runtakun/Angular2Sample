@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  initValue: number;
+  rate: number;
+
+  calc(): number {
+    if (isNaN(this.initValue) || isNaN(this.rate)) {
+      return null;
+    }
+    let answer : number = this.initValue;
+    for (let i = 0; i < 10; i++) {
+      answer = answer * (1 + this.rate / 100);
+    }
+    return Math.floor(answer);
+  }
 }

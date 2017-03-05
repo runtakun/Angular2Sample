@@ -1,3 +1,18 @@
-<h1>
-  {{title}}
-</h1>
+<div class="panel panel-default myPanel mySmallPanel myText">
+  <div class="panel-heading text-center myPanelTitlebar">
+    複利計算
+  </div>
+  <div class="panel-body">
+    <p>元本<br>
+      <input type="tel" [(ngModel)]="initValue"> 円
+    </p>
+    <p>金利<br>
+      <input type="tel" [(ngModel)]="rate"> %
+    </p>
+    <div *ngIf="initValue && rate">
+      <p class="alert alert-info myLargeText text-center">
+        10年後<br>{{ calc() | number }}円
+      </p>
+    </div>
+  </div>
+</div>
